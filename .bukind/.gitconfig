@@ -1,0 +1,18 @@
+[user]
+	name = Dmitry Bukin
+	email = bukind@indoaustinvestments.com
+[core]
+	editor = jed
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	last = log -1 HEAD
+	log1 = log --oneline --decorate --graph --color
+[merge]
+	tool = mymeld
+	conflictstyle = diff3
+[mergetool "mymeld"]
+    cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $MERGED $REMOTE
+[color]
+	diff = true
