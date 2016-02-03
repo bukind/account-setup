@@ -22,3 +22,5 @@ public define trim_buffer_lines()
   pop_spot();
   !if (BATCH) message("done.");
 }
+
+add_to_hook ("_jed_save_buffer_before_hooks", &trim_buffer_lines);
