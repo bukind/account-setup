@@ -29,7 +29,7 @@ if (BATCH == 0)
 %
    set_jed_library_path( get_jed_library_path() + "," + getenv("HOME") + "/.jed" );
 
- () = evalfile("emacs");           % Emacs-like bindings
+() = evalfile("emacs");           % Emacs-like bindings
 %  () = evalfile("edt");             % EDT emulation
 %  () = evalfile ("ide");            % Borland IDE (see also doc/ide-mode.txt)
 %  () = evalfile ("brief");          % Brief Keybindings (MSDOS only!!)
@@ -97,7 +97,8 @@ _autoload( "db_sum_region", "db_sum",
    setkey("push_spot();mark_buffer();untab();pop_spot()","\ej");   % untab all buffer
    setkey("push_spot();mark_buffer();set_prefix_argument(1);untab();pop_spot()","\ek");   % tab the whole buffer
 
-%  add_to_hook ("_jed_save_buffer_before_hooks", &trim_buffer_lines);
+% Trim buffer lines before saving
+% add_to_hook ("_jed_save_buffer_before_hooks", &trim_buffer_lines);
 
 #ifdef XWINDOWS
    % See xjed.txt for information regarding the delete key under X Windows.
@@ -176,7 +177,7 @@ HORIZONTAL_PAN	= -1;	% if zero, no automatic panning.  If positive, only
 			% value of 2 only at high baud rates
 
 BLINK		= 1;	% if non zero, blink matching parenthesis
-TAB_DEFAULT	= 4;	% Tab size  (also try edit_tab_stops)
+TAB_DEFAULT	= 2;	% Tab size  (also try edit_tab_stops)
 USE_TABS	= 0;	% Use tabs when generating whitespace.
 
 Tab_Always_Inserts_Tab = 0; % Set this to 1 if you want the tab key to insert
@@ -195,6 +196,7 @@ WRAP_INDENTS	= 0;	% Non zero indents next line after wrapping current.
 			%  emacs-like behavior, set this to zero.
 CASE_SEARCH = 0;
 
+% the default level of indentation @ google is 2 - yuck!
 custom_variable("Py_Indent_Level", 4);
 
 %---------------------------------------------------------------------------
@@ -319,7 +321,8 @@ define c_mode_hook ()
 
 define python_mode_hook ()
 {
-	TAB = 4;
+  % Py_Indent_Level = 2;
+	TAB = 2;
 	USE_TABS = 0;
 }
 
