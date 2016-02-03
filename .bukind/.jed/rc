@@ -195,6 +195,8 @@ WRAP_INDENTS	= 0;	% Non zero indents next line after wrapping current.
 			%  emacs-like behavior, set this to zero.
 CASE_SEARCH = 0;
 
+custom_variable("Py_Indent_Level", 4);
+
 %---------------------------------------------------------------------------
 % C-mode indentation style
 %---------------------------------------------------------------------------
