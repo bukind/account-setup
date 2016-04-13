@@ -37,3 +37,8 @@ fi
 if [ -f $HOME/.local/.bash_profile ] ; then
     source $HOME/.local/.bash_profile
 fi
+
+if [ -d $HOME/devel/golang ]; then
+    export GOPATH=$HOME/devel/golang
+    export PATH=$PATH:$GOPATH/bin
+fi
