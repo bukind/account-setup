@@ -28,8 +28,11 @@ export LESS
 unset LC_ALL
 LANG=ru_RU.UTF-8
 LC_MESSAGES=en_US.UTF-8
-export LANG LC_MESSAGES
-export JED_ROOT=$HOME/install/jed/jed
+LC_NUMERIC=en_US.UTF-8
+export LANG LC_MESSAGES LC_NUMERIC
+if [ -d $HOME/install/jed/jed ]; then
+    export JED_ROOT=$HOME/install/jed/jed
+fi
 
 if [ -f $HOME/.local/.bash_profile ] ; then
     source $HOME/.local/.bash_profile
