@@ -197,7 +197,7 @@ WRAP_INDENTS	= 0;	% Non zero indents next line after wrapping current.
 CASE_SEARCH = 0;
 
 % the default level of indentation @ google is 2 - yuck!
-custom_variable("Py_Indent_Level", 4);
+custom_variable("Py_Indent_Level", 2);
 
 %---------------------------------------------------------------------------
 % C-mode indentation style
