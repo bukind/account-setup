@@ -48,7 +48,8 @@ _autoload( "db_sum_region", "db_sum",
            "db_toggle_noindent", "db_noindent",
            "find_tag", "ntags_autoload",
            "ntags_back", "ntags_autoload",
-           8 );
+           "golang_mode", "golang",
+           9 );
 
 % Some of the above emulations may set keys that conflict with access to
 % the menubars.  For example, emacs uses ESC-f to move by words.  The
@@ -326,4 +327,8 @@ define python_mode_hook ()
 	USE_TABS = 0;
 }
 
-add_mode_for_extension ("python", "go");
+define golang_mode_hook ()
+{
+}
+
+add_mode_for_extension ("golang", "go");
