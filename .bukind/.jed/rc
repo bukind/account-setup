@@ -322,9 +322,9 @@ define c_mode_hook ()
 
 define python_mode_hook ()
 {
-  % Py_Indent_Level = 2;
-	TAB = 2;
+	TAB = 0;
 	USE_TABS = 0;
+	Py_Indent_Level = 2;
 }
 
 define golang_mode_hook ()
