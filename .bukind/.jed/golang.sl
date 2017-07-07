@@ -123,6 +123,7 @@ define_syntax ("([{", ")]}", '(', $1);  % delimiters
 define_syntax ('"', '"', $1);   % quoted strings
 define_syntax ('`', '"', $1);   % quoted strings
 define_syntax ('\'', '\'', $1);  % quoted characters
+define_syntax ('\\', '\\', $1);  % escape
 define_syntax ("0-9a-zA-Z_", 'w', $1);		% words
 define_syntax ("-+0-9a-fA-FjJlLxX.", '0', $1);	% Numbers
 define_syntax (",;.:", ',', $1);		% punctuation
