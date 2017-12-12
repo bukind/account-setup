@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ -z "$1" ] ; then
+  ps haux | awk '{ users[$1] += $4 }
+  END { for (user in users) { print user, users[user] } }'
+else
+  ps haux | awk -v user="$1" '$1 ~ user { procs[$11] += $4 }
+  END {
+    total=0
+    for (proc in procs) {
+      if (procs[proc] != 0) {
+        print proc, procs[proc]
+        total += procs[proc]
+      }
+    }
+    print "TOTAL", total
+  }'
+fi
