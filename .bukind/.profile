@@ -30,6 +30,10 @@ LANG=ru_RU.UTF-8
 LC_MESSAGES=en_US.UTF-8
 LC_NUMERIC=en_US.UTF-8
 export LANG LC_MESSAGES LC_NUMERIC
+if [ -x /usr/bin/jed ]; then
+    export EDITOR=/usr/bin/jed
+fi
+
 if [ -d $HOME/install/jed/jed ]; then
     export JED_ROOT=$HOME/install/jed/jed
 fi
