@@ -114,7 +114,9 @@ define golang_insert_char_indent(char)
   i = i - what_column();
   golang_indent_line();
   bol_skip_white();
-  goto_column(i + what_column());
+  goto_column(i + what_column() - 1);
+  del();
+  call("self_insert_cmd");
 }
 
 create_syntax_table ($1);
