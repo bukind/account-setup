@@ -1,6 +1,6 @@
 [user]
 	name = Dmitry Bukin
-	email = bukind@indoaustinvestments.com
+	email = bukin.dima@gmail.com
 [core]
 	editor = jed
 [alias]
@@ -13,6 +13,8 @@
 	tool = mymeld
 	conflictstyle = diff3
 [mergetool "mymeld"]
-    cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $MERGED $REMOTE
+  cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $MERGED $REMOTE
 [color]
 	diff = true
+[push]
+  default = simple
