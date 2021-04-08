@@ -16,3 +16,5 @@
     cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $MERGED $REMOTE
 [color]
 	diff = true
+[push]
+	default = simple
